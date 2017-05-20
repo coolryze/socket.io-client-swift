@@ -50,11 +50,11 @@ struct SocketStringReader {
         
         advance(by: count)
         
-        return readString
+        return String(readString)
     }
     
     mutating func readUntilOccurence(of string: String) -> String {
-        let substring = message[currentIndex..<message.endIndex]
+        let substring = String(message[currentIndex..<message.endIndex])
         
         guard let foundRange = substring.range(of: string) else {
             currentIndex = message.endIndex
